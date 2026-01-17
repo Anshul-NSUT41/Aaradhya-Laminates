@@ -44,7 +44,7 @@ const Procurement = () => {
 
                        
                         <a
-  href="https://wa.me/919599030035?text=Hello%20Aaradhya%20CCL%2C%20I%20would%20like%20to%20enquire%20about%20Copper%20Clad%20Laminates."
+  href="https://wa.me/919599030035?text=Hello%20Dinesh%20Yadav,%2C%20I%20would%20like%20to%20enquire%20about%20Copper%20Clad%20Laminates."
   target="_blank"
   rel="noopener noreferrer"
   className="procurement-btn"
