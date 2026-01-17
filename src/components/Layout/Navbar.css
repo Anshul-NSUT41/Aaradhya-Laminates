@@ -1,0 +1,213 @@
+.navbar {
+    height: 80px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg);
+    z-index: 1000;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    /* For mobile menu absolute positioning */
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    color: var(--color-text-main);
+    text-decoration: none;
+    z-index: 1001;
+    /* Ensure logo stays above menu */
+}
+
+.navbar__logo-icon {
+    transform: rotate(90deg);
+}
+
+.navbar__links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__link {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    transition: color 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    color: var(--color-text-main);
+}
+
+/* Global Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-accent);
+    color: #111827;
+    border: 1px solid var(--color-accent);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-text-muted);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile Toggle (Hidden on Desktop) */
+.navbar__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-main);
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-main);
+    transition: transform 0.3s, top 0.3s, bottom 0.3s;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* Hamburger Open State */
+.hamburger.open {
+    background-color: transparent;
+}
+
+.hamburger.open::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.hamburger.open::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Menu (Hidden by default) */
+.navbar__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Below navbar height */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    /* Match navbar bg */
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.navbar__mobile-link {
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.navbar__mobile-link:last-of-type {
+    border-bottom: none;
+}
+
+.mobile-cta {
+    display: none;
+    /* Shown in mobile menu */
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+
+    .navbar__links,
+    .desktop-cta {
+        display: none;
+        /* Hide desktop elements */
+    }
+
+    .navbar__toggle {
+        display: block;
+        /* Show hamburger */
+    }
+
+    .navbar__mobile-menu {
+        display: none;
+        /* Default hidden */
+    }
+
+    .navbar__mobile-menu.open {
+        display: flex;
+        /* Show when open */
+    }
+
+    .mobile-cta {
+        display: inline-flex;
+    }
+}

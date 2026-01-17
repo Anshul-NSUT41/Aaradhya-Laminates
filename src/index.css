@@ -1,0 +1,122 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+    /* Strict Industrial Palette */
+    --color-bg: #111827;
+    /* Flat Deep Charcoal/Navy */
+    --color-bg-card: #1f2937;
+    /* Slightly lighter charcoal for cards */
+    --color-accent: #fbbf24;
+    /* Industrial Gold (Matte, not shiny) */
+    --color-accent-hover: #d97706;
+    --color-text-main: #f3f4f6;
+    /* White/Grey */
+    --color-text-muted: #9ca3af;
+    /* Muted Grey */
+    --color-border: #374151;
+    /* Flat borders */
+
+    /* Typography */
+    --font-main: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* Layout */
+    --container-width: 1200px;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Global Reset for Flat UI */
+button {
+    border: none;
+    border-radius: 0;
+    /* Strict Rectangular */
+    cursor: pointer;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.section-heading {
+    font-size: 2.25rem;
+    color: var(--color-text-main);
+    margin-bottom: var(--spacing-lg);
+}
+
+.specs__table-wrapper {
+  overflow-x: auto;
+}
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .section-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

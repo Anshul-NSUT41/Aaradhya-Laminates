@@ -1,0 +1,11 @@
+/* Page-specific styles can go here, but we'll try to keep it component-based */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
